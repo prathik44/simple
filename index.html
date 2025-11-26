@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GreenLeaf Organic Farm</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #f7fff7;
+      --card:#ffffff;
+      --accent: #2e8b57; /* sea green */
+      --accent-2: #97d6a6;
+      --muted:#6b7280;
+      --glass: rgba(255,255,255,0.6);
+      --radius: 14px;
+      --max-width: 1100px;
+      font-family: 'Inter', system-ui, Arial, sans-serif;
+    }
+
+    *{box-sizing: border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg, #f0fff4 0%, var(--bg) 100%);color:#0b3b2e}
+    a{color:inherit;text-decoration:none}
+
+    .container{width:90%;max-width:var(--max-width);margin:0 auto}
+
+    /* Header */
+    header{padding:18px 0;}
+    .nav{display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:white;font-weight:700;box-shadow:0 6px 18px rgba(46,139,87,0.18)}
+    nav ul{display:flex;gap:18px;align-items:center;margin:0;padding:0;list-style:none}
+    nav a{font-weight:600;color:var(--muted)}
+    .btn-primary{background:var(--accent);color:white;padding:10px 16px;border-radius:10px;font-weight:600}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 480px;gap:28px;align-items:center;padding:36px 0}
+    .hero-card{background:var(--card);border-radius:var(--radius);padding:28px;box-shadow:0 10px 30px rgba(12,38,22,0.06)}
+    .eyebrow{display:inline-block;background:linear-gradient(90deg,var(--accent-2),var(--accent));color:white;padding:6px 10px;border-radius:999px;font-weight:600;font-size:13px}
+    h1{font-size:34px;margin:14px 0 8px;line-height:1.05}
+    p.lead{color:var(--muted);margin:0 0 16px}
+    .hero-cta{display:flex;gap:12px;align-items:center}
+    .hero-cta .btn{padding:12px 16px;border-radius:12px;font-weight:600}
+    .btn-outline{background:transparent;border:2px solid var(--accent);color:var(--accent)}
+
+    .hero-image{border-radius:16px;overflow:hidden;box-shadow:0 12px 30px rgba(12,38,22,0.08)}
+    .hero-image img{width:100%;height:100%;object-fit:cover;display:block}
+
+    /* Products */
+    section.products{padding:10px 0 38px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:var(--card);border-radius:12px;padding:12px;box-shadow:0 8px 20px rgba(12,38,22,0.04);display:flex;flex-direction:column}
+    .card img{width:100%;height:160px;object-fit:cover;border-radius:8px}
+    .card .meta{display:flex;justify-content:space-between;align-items:center;margin-top:10px}
+    .price{font-weight:700;color:var(--accent)}
+
+    /* About + features */
+    .about{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:center;padding:24px 0}
+    .features{display:flex;flex-direction:column;gap:12px}
+    .feature{display:flex;gap:12px;align-items:flex-start}
+    .feature .icon{width:44px;height:44px;border-radius:10px;background:var(--glass);display:flex;align-items:center;justify-content:center;font-weight:700}
+
+    /* Footer */
+    footer{padding:28px 0;border-top:1px solid rgba(11,59,46,0.06);margin-top:20px}
+    .socials{display:flex;gap:12px}
+
+    /* Responsive */
+    @media (max-width:1000px){
+      .hero{grid-template-columns:1fr;}
+      .grid{grid-template-columns:repeat(2,1fr)}
+      .about{grid-template-columns:1fr}
+    }
+    @media (max-width:640px){
+      nav ul{display:none}
+      .grid{grid-template-columns:1fr}
+      h1{font-size:26px}
+      .logo{width:42px;height:42px}
+    }
+
+    /* Small touches */
+    .badge{background:linear-gradient(90deg,var(--accent-2),var(--accent));color:white;padding:6px 8px;border-radius:999px;font-weight:700;font-size:12px}
+    .muted{color:var(--muted)}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">GL</div>
+        <div>
+          <div style="font-weight:700">GreenLeaf Farm</div>
+          <div style="font-size:12px;color:var(--muted)">Organic produce • Fresh daily</div>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <a class="btn-primary" href="#products">Shop</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-card">
+        <span class="eyebrow">Fresh • Local • Organic</span>
+        <h1>Fresh vegetables & fruits — straight from our fields</h1>
+        <p class="lead">We grow seasonal, pesticide-free produce using sustainable farming methods. Delivered fresh to your door or available at the farmstand.</p>
+
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#products" style="background:var(--accent);color:white;border-radius:12px;padding:12px 18px;">Browse Products</a>
+          <a class="btn btn-outline" href="#about" style="border-radius:12px;padding:12px 18px;">Learn More</a>
+        </div>
+
+        <div style="display:flex;gap:12px;margin-top:18px;align-items:center">
+          <div class="badge">Farmstand 6 days/week</div>
+          <div class="muted">Pickup & local delivery available</div>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=1b6f1f8d7a8c8f2e2d6d9e5b2e3f6f15" alt="farm field">
+      </div>
+    </section>
+
+    <!-- Products -->
+    <section id="products" class="products">
+      <h2 style="margin:6px 0 12px">Our Fresh Picks</h2>
+      <p class="muted" style="margin:0 0 18px">Seasonal vegetables and fruits harvested within 48 hours.</p>
+
+      <div class="grid">
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1542444459-db7a6c9a2b34?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=3b2ef2a3f5da2c7d2c9bb9e7c2b8d6f1" alt="tomatoes">
+          <h3 style="margin:10px 0 4px">Vine Tomatoes</h3>
+          <div class="meta">
+            <div class="muted">Heirloom, juicy</div>
+            <div class="price">₹80 / kg</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=2a3b1b7c8d4e5f6a7b8c9d0e1f2a3b4c" alt="leafy greens">
+          <h3 style="margin:10px 0 4px">Organic Spinach</h3>
+          <div class="meta">
+            <div class="muted">Baby leaves</div>
+            <div class="price">₹60 / bunch</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1549880338-65ddcdfd017b?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=7c8f9e3d4a5b6c7d8e9f0a1b2c3d4e5f" alt="carrots">
+          <h3 style="margin:10px 0 4px">Crunchy Carrots</h3>
+          <div class="meta">
+            <div class="muted">Sweet & earthy</div>
+            <div class="price">₹45 / kg</div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="about">
+      <div>
+        <h2>About GreenLeaf</h2>
+        <p class="muted">GreenLeaf is a small family-run organic farm focused on sustainable practices — cover cropping, composting, and minimal-till planting. Our goal is to give you nutritious produce while restoring soil health.</p>
+
+        <div style="margin-top:14px;display:flex;gap:12px;flex-wrap:wrap">
+          <div style="background:var(--card);padding:10px;border-radius:10px;box-shadow:0 6px 18px rgba(12,38,22,0.04)">
+            <strong>Farmstand</strong>
+            <div class="muted" style="font-size:13px">Mon - Sat • 8am - 2pm</div>
+          </div>
+          <div style="background:var(--card);padding:10px;border-radius:10px;box-shadow:0 6px 18px rgba(12,38,22,0.04)">
+            <strong>Delivery</strong>
+            <div class="muted" style="font-size:13px">Local within 10 km</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="features">
+        <div class="feature">
+          <div class="icon">🌿</div>
+          <div>
+            <strong>Certified Organic</strong>
+            <div class="muted" style="font-size:13px">No synthetic pesticides or fertilizers</div>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="icon">🚜</div>
+          <div>
+            <strong>Sustainable Practices</strong>
+            <div class="muted" style="font-size:13px">Compost, crop-rotation, water-wise irrigation</div>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="icon">🤝</div>
+          <div>
+            <strong>Community Supported</strong>
+            <div class="muted" style="font-size:13px">Weekly boxes & farm events</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact / Footer -->
+    <footer id="contact">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+        <div>
+          <strong>Visit or contact</strong>
+          <div class="muted" style="font-size:13px">123 Field Lane, Near Riverbank • +91 98765 43210 • hello@greenleaf.farm</div>
+        </div>
+        <div class="socials">
+          <a href="#" aria-label="facebook">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 12C22 6.477 17.523 2 12 2S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.877v-6.99H7.898v-2.887h2.54V9.797c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562v1.875h2.773l-.443 2.887h-2.33V21.877C18.343 21.128 22 16.991 22 12z" fill="currentColor"/></svg>
+          </a>
+          <a href="#" aria-label="instagram">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 6.5A4.5 4.5 0 1112 17a4.5 4.5 0 010-8.5zM19 6.5a1 1 0 110 2 1 1 0 010-2z" fill="currentColor"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div style="margin-top:14px;font-size:13px;color:var(--muted)">© <span id="year">2025</span> GreenLeaf Farm — Grown with care</div>
+    </footer>
+  </main>
+</body>
+</html>
